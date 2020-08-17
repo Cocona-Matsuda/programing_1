@@ -4,6 +4,7 @@ int main (void)
 {
     int wind,rain,none;
 
+    //風速と降水量を入力
     printf("風速を入力してください：");
     scanf("%d",&wind);
 
