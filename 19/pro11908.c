@@ -1,15 +1,15 @@
 #include <stdio.h>
 
-int main (void)
+int main(void)
 {
-    int x = 0, i, count;
+    int num, i, a;
 
-    printf("数字を入力してください>>");
-    scanf("%d",&count);
+    printf("整数値を入力してください>>");
+    scanf("%d", &num);
 
-    while (x < count)
+    for (i = 0; i <= num; i++)
     {
-        for ( i = 0; i < x; i++)
+        for (a = 0; a < i; a++)
         {
             printf("*");
         }
