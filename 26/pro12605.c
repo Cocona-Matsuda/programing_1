@@ -10,12 +10,12 @@ int main(void)
 	float btemp[365];
 	int i;
 	int n;
-    int flag;
 	n = filein(btemp); /*ファイルからデータの読み込み*/
 
 /*
 	ここから
 */
+    int flag;
 
     printf("メニュー：\n");
     printf("1.入力\n2.表示\n");
@@ -48,16 +48,16 @@ int filein(float m[])
 {
 	FILE *fp;
 	int n = 0;
-	
+
 	fp = fopen("BodyTemp.csv", "r");
 	if (fp != NULL){
 		while (fscanf(fp, "%f", &m[n]) != EOF){
 			n++;
 		}
-		
+
 		fclose(fp);
 	}
-	
+
 	return (n);
 }
 
@@ -70,6 +70,6 @@ void fileout(float m[], int n)
 	for (i = 0; i < n; i++){
 		fprintf(fp, "%f\n", m[i]);
 	}
-	
+
 	fclose(fp);
 }
