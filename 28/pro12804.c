@@ -2,7 +2,12 @@
 
 int main (void)
 {
-    int ;
+    char moji;
+
+    for ( moji = 0x41; moji < 0x5A; moji++)
+    {
+        printf("%c",moji);
+    }
 
     return 0;
 }
