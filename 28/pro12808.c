@@ -2,13 +2,12 @@
 
 int main(void)
 {
-    char c1;
-    char c2;
+    char moji;
 
-    c1 = 'A';
-    c2 = 'A' + 1;
-
-    printf("%c%c\n", c1, c2);
+    for (moji = 'A'; moji <= 'Z'; moji++)
+    {
+        printf("%c", moji);
+    }
 
     return 0;
 }
