@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <conio.h>
 
 int main (void)
 {
@@ -6,11 +7,11 @@ int main (void)
 
     moji = getch();
 
-    if (moji == "a"){
+    if (moji == 'a'){
         printf("A");
-    }else if (moji == "b"){
+    }else if (moji == 'b'){
         printf("B");
-    }else if (moji == "c"){
+    }else if (moji == 'c'){
         printf("C");
     }else{
         printf("X");
