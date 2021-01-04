@@ -1,52 +1,75 @@
-#include <stdio.h>
-#include <conio.h>
+#include<stdio.h>
+#include<conio.h>
 
-int main ( void ){
-  int x;
-  int y;
-  char c;
-  int i;
+int main(void){
+    int x, y, i = 0;
+    char c;
 
-   x = 40;
-   y = 12;
+    x = 25;
+    y = 10;
 
-   gotoxy(x, y);
-   printf("o");
+    gotoxy(x,y);
+    printf("o");
 
-   while (1){
-       if (kbhit() != 0){
-           gotoxy(x, y);
-           printf(" ");
+    gotoxy(40,5);
+    printf("*");
 
-           c = getch();
-           switch (c){
-               case 'w':
-               if (y > 1){
-                   y--;
-               }
-               break;
+    while (i == 0){
+        if (kbhit != 0){
 
-             case 's':
-               if (y < 24){
-                   y++;
-               }
-               break;
+            gotoxy(x,y);
+            printf(" ");
 
-             case 'a':
-               if (x > 1){
-                   x--;
-               }
-               break;
+            c = getch();
 
-             case 'd':
-               if (x < 80){
-                   x++;
-               }
-               break;
-           }
-           gotoxy(x, y);
-           printf("o");
-       }
-   }
-   return (0);
+            switch (i == 0){
+                case 'w':
+                    printf("^");
+                    if (y > 1){
+                        y--;
+                    }else{
+                        y = 20;
+                    }
+                    break;
+
+                case 's':
+                    printf("v");
+                    if (y < 20){
+                        y++;
+                    }else{
+                        y = 1;
+                    }
+                    break;
+
+                case 'a':
+                    printf("<");
+                    if (x > 1){
+                        x--;
+                    }else{
+                        x = 50;
+                    }
+                    break;
+
+                case 'd':
+                    printf(">");
+                    if (x < 24){
+                        x++;
+                    }else{
+                        x = 1;
+                    }
+                    break;
+
+                case 0:
+                    i++;
+                    break;
+            }
+            gotoxy(x,y);
+            printf("o");
+            if (x == 40 && y ==5){
+                i++;
+            }
+        }
+
+    }
+    return 0;
 }
