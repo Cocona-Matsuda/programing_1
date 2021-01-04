@@ -4,7 +4,11 @@
 
 int main (void)
 {
-    int r, c, input, resulut, moji, win = 0, lose = 0;
+
+    int r ;  //乱数生成用
+    int c ; //入力終了用
+    int input,  moji ; //人とコンピュータの入力用
+    int resulut , win = 0 , lose = 0; //勝敗判定・勝った回数・負けた回数
 
     printf("乱数の種（奇数）>> ");
     scanf("%d", &r);
@@ -13,7 +17,7 @@ int main (void)
 
     while (c != 0)
     {
-        //人間の処理
+        //人間の入力用
         input = getch();
         input -= 48;
         printf("人間：");
