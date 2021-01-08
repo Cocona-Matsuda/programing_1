@@ -11,14 +11,16 @@ int main (void)
     /*自分のステータス HP , ATK , DEF の順*/
     int status[3] = { 50, 25, 0};
 
+    /* enemy 召喚  HP , ATK , DEF の順*/
+    int enemy[3] = {10, 20, 0};
+
+    //名前入力
     char name[8];
     printf("名前を入力してください：");
     scanf("%s",&name);
 
 
     while(1){
-        /* enemy 召喚  HP , ATK , DEF の順*/
-        int enemy[3] = {10, 20, 0};
 
         choice();
 

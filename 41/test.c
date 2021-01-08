@@ -1,0 +1,16 @@
+#include <stdio.h>
+#include <conio.h>
+#include <time.h>
+#include <windows.h>
+
+int main (void)
+{
+
+    printf("HP:#######---");
+
+    Sleep(1000);
+
+    printf("\rHP:###-------");
+
+    return 0;
+}
