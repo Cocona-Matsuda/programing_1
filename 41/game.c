@@ -8,16 +8,19 @@ int choice(void);
 
 int main (void)
 {
+    /*自分のステータス HP , ATK , DEF の順*/
+    int status[3] = { 50, 25, 0};
+
     char name[8];
     printf("名前を入力してください：");
     scanf("%s",&name);
 
-    choice();
 
-    while(1)
-    {
+    while(1){
         /* enemy 召喚  HP , ATK , DEF の順*/
         int enemy[3] = {10, 20, 0};
+
+        choice();
 
         /* DEF値をランダムで決定 */
         enemy[2] = random();
@@ -34,8 +37,6 @@ int main (void)
             break;
         }
 
-        /*自分のステータス HP , ATK , DEF の順*/
-        int status[3] = { 50, 25, 0};
 
         status[2] = random();
 
@@ -68,16 +69,22 @@ int choice(void)
     printf("戦いますか？(y/n):");
     scanf("%s",&input);
 
-    if (input == 'y')
-    {
-        Sleep (500);
+    switch (input){
+    case 'y':
+        Sleep(500);
         printf("エネミーにアタック！\n");
         return 0;
-    }else
-    {
-        Sleep (500);
+        break;
+
+    case 'n':
+        Sleep(500);
         printf("逃げ出した。");
         exit(0);
+
+    default:
+        Sleep(500);
+        printf("戦いますか？(y/n):");
+        scanf("%s", &input);
     }
 }
 
@@ -85,3 +92,4 @@ int random(void){
     srand((unsigned int)time(NULL));
     return 10 + rand() % 11 ;
 }
+
