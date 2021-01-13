@@ -3,6 +3,8 @@
 #include <time.h>
 #include <windows.h>
 
+#define ESC 0x1B
+
 int random(void);
 int choice(void);
 
@@ -14,11 +16,16 @@ int main (void)
     /* enemy 召喚  HP , ATK , DEF の順*/
     int enemy[3] = {10, 20, 0};
 
+    //画面をクリアにする
+    printf("%c[2J",ESC);
+
     //名前入力
     char name[8];
-    printf("名前を入力してください：");
-    scanf("%s",&name);
-
+    printf("名前を入力してください。\n");
+    printf("%c[4A", ESC);
+    scanf("%s", &name);
+    printf("%c[2B",ESC);
+    Sleep(1000);
 
     while(1){
 
@@ -62,6 +69,8 @@ int main (void)
 
 int choice(void)
 {
+    //敵出現
+    printf("%c[K",ESC);
     printf("エネミーが現れた！\n");
     Sleep (500);
 
@@ -70,6 +79,10 @@ int choice(void)
 
     printf("戦いますか？(y/n):");
     scanf("%s",&input);
+
+    printf("%c[2A%c[K",ESC,ESC);
+    printf("%c[1B%c[K",ESC,ESC);
+    printf("%c[1A",ESC);
 
     switch (input){
     case 'y':
