@@ -3,14 +3,17 @@
 #include <time.h>
 #include <windows.h>
 
-int main (void)
-{
+int display_enemy(void);
+int display_me (void);
+int display_comment (void);
 
-    printf("HP:#######---");
+int main (void){
 
-    Sleep(1000);
+    return 0;
+}
 
-    printf("\rHP:###-------");
-
+int display_enemy(){
+    printf("a");
+    printf("%c[2A");
     return 0;
 }
